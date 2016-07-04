@@ -168,7 +168,7 @@ public:
 };
 ostream &operator<<(ostream &out, Avocat a)
 {
-	out<<a.cod<<" "<<a.nume<<" "<<a.onorariu<<" "<<a.nr_procese<<" "<<"Valori_procese: ";
+	out<<a.cod<<" "<<a.nume<<" "<<a.onorariu<<" "<<a.nr_procese<<" "<<"Valori procese: ";
 	for(int i=0;i<a.nr_procese;i++)
 		out<<a.valori_procese[i]<<" ";
 	return out;
@@ -219,7 +219,7 @@ public:
 };
 ostream &operator<<(ostream &out, AvocatOficiu a)
 {
-	out<<a.getCod()<<" "<<a.getNume()<<" "<<a.getOnorariu()<<" "<<a.getNumarProcese()<<" "<<"Valori_procese: ";
+	out<<a.getCod()<<" "<<a.getNume()<<" "<<a.getOnorariu()<<" "<<a.getNumarProcese()<<" "<<"Valori procese: ";
 	for(int i=0;i<a.getNumarProcese();i++)
 		out<<a.getVectorProcese()[i]<<" ";
 	out<<a.client<<" "<<a.durata_proces;
