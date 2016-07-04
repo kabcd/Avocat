@@ -274,7 +274,7 @@ void main()
 	fisOut<<a4;//se salveaza in fisier datele despre avocatul a4
 	fisOut.close();
 	ifstream fisIn("intrare.txt",ios::in);
-	fisIn>>a4;//se citeste din fisier datele despre avocatul a4
+	fisIn>>a4;//se citesc din fisier datele despre avocatul a4
 	cout<<a4<<endl;
 	fisIn.close();
 
