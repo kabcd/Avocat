@@ -40,7 +40,7 @@ public:
 		for(int i=0;i<a.nr_procese;i++)
 			this->valori_procese[i]=a.valori_procese[i];
 	}
-	void operator=(Avocat a)
+	Avocat operator=(Avocat a)
 	{
 		if(this->nume!=NULL)
 			delete [] this->nume;
@@ -53,6 +53,7 @@ public:
 		this->valori_procese=new int[a.nr_procese];
 		for(int i=0;i<a.nr_procese;i++)
 			this->valori_procese[i]=a.valori_procese[i];
+		return *this;
 	}
 	~Avocat()
 	{
@@ -105,7 +106,7 @@ public:
 		else
 			throw new exception("vector procese invalid!");
 	}
-	friend ostream &operator<<(ostream &out, Avocat a);
+	friend ostream &operator<<(ostream &out, Avocat &a);
 	int &operator[](int index)
 	{
 		static int err;
@@ -163,17 +164,17 @@ public:
 			s=s+this->valori_procese[i];
 		return s/this->nr_procese;	
 	}
-	friend ofstream &operator<<(ofstream &out,Avocat a);
+	friend ofstream &operator<<(ofstream &out,Avocat &a);
 	friend ifstream &operator>>(ifstream &in,Avocat &a);
 };
-ostream &operator<<(ostream &out, Avocat a)
+ostream &operator<<(ostream &out, Avocat &a)
 {
 	out<<a.cod<<" "<<a.nume<<" "<<a.onorariu<<" "<<a.nr_procese<<" Valori procese: ";
 	for(int i=0;i<a.nr_procese;i++)
 		out<<a.valori_procese[i]<<" ";
 	return out;
 }
-ofstream &operator<<(ofstream &out,Avocat a)
+ofstream &operator<<(ofstream &out,Avocat &a)
 {
 	out<<a.cod<<endl;
 	out<<a.nume<<endl;
@@ -215,9 +216,14 @@ public:
 		strcpy(this->client, client);
 		this->durata_proces=durata_proces;
 	}
-	friend ostream &operator<<(ostream &out, AvocatOficiu a);
+	~AvocatOficiu()
+	{
+		if(this->client!=NULL)
+			delete [] this->client;
+	}
+	friend ostream &operator<<(ostream &out, AvocatOficiu &a);
 };
-ostream &operator<<(ostream &out, AvocatOficiu a)
+ostream &operator<<(ostream &out, AvocatOficiu &a)
 {
 	out<<a.getCod()<<" "<<a.getNume()<<" "<<a.getOnorariu()<<" "<<a.getNumarProcese()<<" Valori procese: ";
 	for(int i=0;i<a.getNumarProcese();i++)
