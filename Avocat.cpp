@@ -92,7 +92,7 @@ public:
 		else
 			throw new exception("nume invalid!");
 	}
-	void setVectorProcese(int *valoriProceseNou, int nrProceseNou)
+	void setVectorProcese(int *vectorProceseNou, int nrProceseNou)
 	{
 		if(this->valori_procese!=NULL)
 		{
@@ -100,10 +100,10 @@ public:
 			this->nr_procese=nrProceseNou;
 			this->valori_procese=new int[nrProceseNou];
 			for(int i=0;i<nrProceseNou;i++)
-				this->valori_procese[i]=valoriProceseNou[i];
+				this->valori_procese[i]=vectorProceseNou[i];
 		}
 		else
-			throw new exception("vecctor procese invalid!");
+			throw new exception("vector procese invalid!");
 	}
 	friend ostream &operator<<(ostream &out, Avocat a);
 	int &operator[](int index)
