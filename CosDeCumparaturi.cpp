@@ -281,10 +281,10 @@ void main()
 	cout<<"Articolul cu identificatorul 102 din cosul c4 este : "<<cc4[102]<<endl;
 	
 	ofstream fOut("iesire.txt");
-	fOut<<cc2;//se salveaza datele despre cosul cc2 in fisier binar
+	fOut<<cc2;//se salveaza datele despre cosul cc2 in fisier
 	fOut.close();
 	ifstream fIn("intrare.txt");	
-	fIn>>cc2;//se restaureaza datele despre cosul cc2 din fisier binar
+	fIn>>cc2;//se restaureaza datele despre cosul cc2 din fisier
 	cout<<cc2<<endl;
 	fIn.close();
 
