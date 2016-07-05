@@ -291,7 +291,7 @@ void main()
 	CosDeCumparaturi listaCC[]={cc1, cc2, cc3, cc4};
 	sorteaza(listaCC,4);// functie generica pentru sortarea crescatoare a elementelor masivului unidimensional
 	
-	//se adauga toate cosurile de cumparaturi si se calculeaza valoarea totala a tranzactiilor folosind un iterator 
+	//se adauga toate cosurile de cumparaturi intr-o structura STL de tip lista si se calculeaza valoarea totala a tranzactiilor folosind un iterator 
 	list<CosDeCumparaturi> comenziCurente;
 	comenziCurente.push_back(cc1);
 	comenziCurente.push_back(cc2);
