@@ -89,7 +89,7 @@ public:
 			strcpy(this->nume,numeNou);
 		}
 		else
-			throw new exception("nume invalid!");
+			throw new exception("Nume invalid!");
 	}
 	void setVectorProcese(int *vectorProceseNou, int nrProceseNou)
 	{
@@ -102,7 +102,7 @@ public:
 				this->valori_procese[i]=vectorProceseNou[i];
 		}
 		else
-			throw new exception("vector procese invalid!");
+			throw new exception("Vector procese invalid!");
 	}
 	friend ostream &operator<<(ostream &out, Avocat &a);
 	int &operator[](int index)
