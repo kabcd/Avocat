@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 using namespace std;
 class Document{
 private:
@@ -142,7 +142,7 @@ ostream &operator<<(ostream &out, Document &d)
 		out<<endl;
 		return out;
 	}
-istream &operator>>(istream &in, Document &d);
+istream &operator>>(istream &in, Document &d)
 {
 	char aux[20];
 	cout<<endl<<"Dati nume document:";
@@ -183,7 +183,7 @@ void main()
 		d4=d1;
 		cout<<d4<<endl;
 
-		cout<<d4.TotalCuvinte()<<endl; //se calculeaza numarul total de cuvinte din documentul d4
+		cout<<d2.TotalCuvinte()<<endl; //se calculeaza numarul total de cuvinte din documentul d2
 
 		Document d5;
 		cin>>d5;
