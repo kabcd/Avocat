@@ -87,7 +87,7 @@ public:
 		return this->durata - f.durata;
 	}
 	//supraincarcare >
-    	bool operator>(FisierAudio f)
+        bool operator>(FisierAudio f)
 	{
 		 if (this->durata > f.durata)
 			 return true;
@@ -98,20 +98,19 @@ public:
 int FisierAudio::nrFisiere = 0;
 ostream &operator<<(ostream &out, FisierAudio &f)
 {
-	out << "Id:" << f.id<<endl;
-	out << "Denumire:" << f.denumire<<endl;
-	out << "Durata:" << f.durata<<endl;
+	out << f.id<<" - "<<f.denumire<<", "<<f.durata;
 	return out;
 }
 void main()
 {
 	FisierAudio fa1;
-	cout << fa1<<endl;
 
 	FisierAudio fa2(197, "Gangnam Style");
 	cout << fa2.getDurata()<<endl;
 	cout << fa2.id<<endl;
 
+	cout << fa1 <<endl;
+	cout << fa2 <<endl;
 	FisierAudio fa3 = fa2;
 	fa2.setName("Harlem Shake");
 	cout << fa2.getName()<<endl;
@@ -120,6 +119,7 @@ void main()
 	FisierAudio fa4;
 	fa4 = fa2;
 	cout << fa4.getDurata()<<endl;
+
 	cout << FisierAudio::nrFisiere<<endl;
 	
 	FisierAudio *pfa2 = new FisierAudio(275, "Queen - Show must go on");
