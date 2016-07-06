@@ -18,7 +18,7 @@ public:
 		puncte_pe_luna=NULL;
 	}
 	//constructor cu parametri
-	CardFidelitate(int puncte_disponibile, char* posesor,int nr_luni, float *puncte_pe_luna, const int c_c):cod_card(c_c)
+	CardFidelitate(int puncte_disponibile, char* posesor,int nr_luni, float *puncte_pe_luna, const int COD_CARD):cod_card(COD_CARD)
 	{
 		this->puncte_disponibile=puncte_disponibile;
 		this->posesor=new char[strlen(posesor)+1];
@@ -68,7 +68,7 @@ public:
 	{ 
 		return this->posesor;
 	}
-	void setPosesor(char *posesorNou)
+	void setPosesor(char* posesorNou)
 	{
 		if(this->posesor!=NULL)
 		{
