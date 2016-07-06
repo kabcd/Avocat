@@ -16,9 +16,7 @@ public:
 		strcpy(this->localitate,"Anonim");
 		this->pret=0;
 		this->numar_camere=0;
-		this->suprafara_camere=new int[this->numar_camere];
-		for(int i=0;i<this->numar_camere;i++)
-			this->suprafara_camere[i]=0;
+		this->suprafara_camere=NULL;
 	}
 	Apartament(const int a_c, char* localitate, int pret, int numar_camere, int *suprafara_camere):an_constructie(a_c)
 	{
@@ -91,7 +89,7 @@ public:
 			strcpy(this->localitate,localitateNou);
 		}
 		else
-			throw new exception("localitate invalida!");
+			throw new exception("Localitate invalida!");
 	}
 	void setVectorSupr(int *vectorSuprafeteNou, int nrCamereNou)
 	{
@@ -104,7 +102,7 @@ public:
 				this->suprafara_camere[i]=vectorSuprafeteNou[i];
 		}
 		else
-			throw new exception("vector suprafete invalid!");
+			throw new exception("Vector suprafete invalid!");
 	}
 	friend ostream &operator<<(ostream &out, Apartament &a);
 	int suprTotala()
@@ -192,7 +190,7 @@ private:
 	char* locatar;
 	int chirie;
 public:
-	ApartamentSocial():Apartament(0,"Anonim",0,0,0)
+	ApartamentSocial():Apartament()
 	{
 		this->locatar=new char[strlen("Necunoscut")+1];
 		strcpy(this->locatar,"Necunoscut");
