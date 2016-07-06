@@ -13,7 +13,7 @@ public:
 		this->nrPuncteVerificare=0;
 		AlergatorMaraton::nrAlergatori++;
 	}
-	AlergatorMaraton(float *timpCursa, int nrPuncteVerificare, const int i):id(i)
+	AlergatorMaraton(float *timpCursa, int nrPuncteVerificare, const int ID):id(ID)
 	{
 		this->nrPuncteVerificare=nrPuncteVerificare;
 		this->timpCursa=new float[nrPuncteVerificare];
