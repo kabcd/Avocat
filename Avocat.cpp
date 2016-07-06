@@ -18,7 +18,7 @@ public:
 		this->nr_procese=0;
 		this->valori_procese=NULL;
 	}
-	Avocat(const int c, char* nume, int onorariu, int nr_procese, int *valori_procese):cod(c)
+	Avocat(const int COD, char* nume, int onorariu, int nr_procese, int *valori_procese):cod(COD)
 	{
 		this->nume=new char[strlen(nume)+1];
 		strcpy(this->nume,nume);
