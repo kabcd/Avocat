@@ -16,9 +16,7 @@ public:
 		strcpy(this->nume,"Anonim");
 		this->onorariu=0;
 		this->nr_procese=0;
-		this->valori_procese=new int[this->nr_procese];
-		for(int i=0;i<this->nr_procese;i++)
-			this->valori_procese=0;	
+		this->valori_procese=NULL;
 	}
 	Avocat(const int c, char* nume, int onorariu, int nr_procese, int *valori_procese):cod(c)
 	{
@@ -203,7 +201,7 @@ private:
 	char* client;
 	int durata_proces;
 public:
-	AvocatOficiu():Avocat(0,"Anonim",0,0,0)
+	AvocatOficiu():Avocat()
 	{
 		this->client=new char[strlen("Necunoscut")+1];
 		strcpy(this->client, "Necunoscut");
