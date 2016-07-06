@@ -112,7 +112,7 @@ public:
 	//supraincaracre -= 
 	Document operator-=(int x)
 	{
-		if(this->nr_pagini>=x)
+		if(this->nr_pagini!=NULL)
 		{
 			int *aux = new int[this->nr_pagini];
 			for(int i=0;i<=this->nr_pagini;i++)
