@@ -18,7 +18,7 @@ public:
 		this->prajituri=NULL;
 		Bucatar::nr_restaurante++;
 	}
-	Bucatar(const int c, char* nume, int greutate, int nr_ore, int *prajituri):cod(c)
+	Bucatar(const int COD, char* nume, int greutate, int nr_ore, int *prajituri):cod(COD)
 	{
 		this->nume=new char[strlen(nume)+1];
 		strcpy(this->nume, nume);
