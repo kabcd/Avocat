@@ -100,13 +100,13 @@ public:
 int Bucatar::nr_restaurante=0; 
 ostream &operator<<(ostream &out, Bucatar &b)
 {
-	out<<"Cod:"<<b.cod<<endl;
-	out<<"Nume:"<<b.nume<<endl;
-	out<<"Greutate:"<<b.greutate<<endl;
-	out<<"Nr ore:"<<b.nr_ore<<endl;
+	out<<"Cod: "<<b.cod<<endl;
+	out<<"Nume: "<<b.nume<<endl;
+	out<<"Greutate: "<<b.greutate<<endl;
+	out<<"Nr ore: "<<b.nr_ore<<endl;
 	out<<"Prajituri: ";
 	for(int i=0;i<b.nr_ore;i++)
-			out<<b.prajituri[i]<<" ";
+		out<<b.prajituri[i]<<" ";
 	return out;
 }
 istream &operator>>(istream &in, Bucatar &b)
