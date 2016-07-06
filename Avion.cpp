@@ -15,9 +15,7 @@ public:
 		strcpy(this->nume, "Anonim");
 		this->seria=0;
 		this->nr_zile=0;
-		this->combustibil=new int[nr_zile];
-		for(int i=0;i<nr_zile;i++)
-			this->combustibil[i]=0;
+		this->combustibil=NULL;
 		Avion::nr_avioane++;
 	}
 	Avion(char* nume, int seria):id(Avion::nr_avioane)
@@ -26,9 +24,7 @@ public:
 		strcpy(this->nume, nume);
 		this->seria=seria;
 		this->nr_zile=0;
-		this->combustibil=new int[nr_zile];
-		for(int i=0;i<nr_zile;i++)
-			this->combustibil[i]=0;
+		this->combustibil=NULL;
 		Avion::nr_avioane++;
 	}
 	~Avion()
