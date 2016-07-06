@@ -87,7 +87,7 @@ public:
 		return this->durata - f.durata;
 	}
 	//supraincarcare >
-    bool operator>(FisierAudio f)
+    	bool operator>(FisierAudio f)
 	{
 		 if (this->durata > f.durata)
 			 return true;
