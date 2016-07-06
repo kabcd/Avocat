@@ -18,7 +18,7 @@ public:
 		this->numar_camere=0;
 		this->suprafara_camere=NULL;
 	}
-	Apartament(const int a_c, char* localitate, int pret, int numar_camere, int *suprafara_camere):an_constructie(a_c)
+	Apartament(const int AN_CONSTRUCTIE, char* localitate, int pret, int numar_camere, int *suprafara_camere):an_constructie(AN_CONSTRUCTIE)
 	{
 		this->localitate=new char[strlen(localitate)+1];
 		strcpy(this->localitate,localitate);
