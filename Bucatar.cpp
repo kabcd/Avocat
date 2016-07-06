@@ -15,9 +15,7 @@ public:
 		strcpy(this->nume, "Anonim");
 		this->greutate=0;
 		this->nr_ore=0;
-		this->prajituri=new int[nr_ore];
-		for(int i=0;i<nr_ore;i++)
-			this->prajituri[i]=0;
+		this->prajituri=NULL;
 		Bucatar::nr_restaurante++;
 	}
 	Bucatar(const int c, char* nume, int greutate, int nr_ore, int *prajituri):cod(c)
@@ -170,5 +168,4 @@ void main()
 	b9=b1+b8;
 	cout<<b9.getGreutate()<<endl;
 	cout<<b1.getGreutate()<<endl;
-
 }
