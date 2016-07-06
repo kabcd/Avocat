@@ -17,7 +17,7 @@ public:
 		strcpy(this->furnizor,"Anonim");
 		this->valoare=0;
 	}
-	Contract(const int nc, int an, char* beneficiar, char* furnizor,float valoare):nrContract(nc)
+	Contract(const int NRCONTRACT, int an, char* beneficiar, char* furnizor,float valoare):nrContract(NRCONTRACT)
 	{
 		this->an=an;
 		strcpy(this->beneficiar,beneficiar);
