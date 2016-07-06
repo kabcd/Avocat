@@ -33,21 +33,21 @@ public:
 ostream &operator<<(ostream &out, Articol &a)
 {
 	out<<" Articol: "<<endl;
-	out<<"  Id articol:"<<a.idArticol<<endl;
-	out<<"  Denumire articol:"<<a.denumire<<endl;
-	out<<"  Cantitate:"<<a.cantitate<<endl;
-	out<<"  Pret unitar:"<<a.pu<<endl;
+	out<<"  Id articol: "<<a.idArticol<<endl;
+	out<<"  Denumire articol: "<<a.denumire<<endl;
+	out<<"  Cantitate: "<<a.cantitate<<endl;
+	out<<"  Pret unitar: "<<a.pu<<endl;
 	return out;
 }
 istream &operator>>(istream &in, Articol &a)
 {
-	cout<<"Dati id articol:"<<endl;
+	cout<<"dati id articol: "<<endl;
 	in>>a.idArticol;
-	cout<<"Dati denumire articol:"<<endl;
+	cout<<"dati denumire articol: "<<endl;
 	in>>a.denumire;
-	cout<<"Dati cantitate:"<<endl;
+	cout<<"dati cantitate: "<<endl;
 	in>>a.cantitate;
-	cout<<"Dati pret unitar:"<<endl;
+	cout<<"dati pret unitar: "<<endl;
 	in>>a.pu;
 	return in;
 }
@@ -209,9 +209,9 @@ ostream &operator<<(ostream &out, CosDeCumparaturi &cc)
 }
 istream &operator>>(istream &in, CosDeCumparaturi &cc)
 {
-	cout<<"Dati nr articole:"<<endl;
+	cout<<"dati nr articole:"<<endl;
 	in>>cc.numarCurentDeArticole;
-	cout<<"Dati articole:"<<endl;
+	cout<<"dati articole:"<<endl;
 	for(int i=0;i<cc.numarCurentDeArticole;i++)
 		in>>cc.produse[i];
 	return in;
