@@ -53,7 +53,7 @@ public:
 		Ferma::nr_ferme++;
 	}
 	//supraincarcare =
-	Ferma operator=(Ferma &f)
+	Ferma operator=(Ferma f)
 	{
 		if(this->denumire_ferma!=NULL)
 			delete [] this->denumire_ferma;
@@ -143,11 +143,13 @@ public:
 		this->suprafata+=10;
 		return aux;
 	}
+	//supraincarcare --
 	Ferma operator--()
 	{
 		this->suprafata-=10;
 		return *this;
 	}
+	//supraincarcare <=
 	bool operator<=(Ferma f)
 	{
 		if(this->suprafata<=f.suprafata)
