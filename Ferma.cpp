@@ -32,7 +32,7 @@ public:
 		Ferma::nr_ferme++;
 	}
 	//destructor
-    ~Ferma()
+    	~Ferma()
 	{
 		if(this->denumire_ferma!=NULL)
 			delete [] this->denumire_ferma;
