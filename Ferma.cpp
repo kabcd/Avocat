@@ -223,8 +223,8 @@ void main()
 	cin>>f4;
 	cout<<f4<<endl;
 
-	int f=f1;
-	cout<<f<<endl;
+	int suprafata=f1;
+	cout<<suprafata<<endl;
 
 	Ferma f5("Ferma05",120,0, NULL);
 	f5++;
