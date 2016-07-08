@@ -96,7 +96,7 @@ public:
 		return Ferma::nr_ferme;
 	}
 	//setterii
-	void setDenumire_ferma(char *denumire_fermaNou)
+	void setDenumire_ferma(char* denumire_fermaNou)
 	{
 		if(this->denumire_ferma!=NULL)
 		{
