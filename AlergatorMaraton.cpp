@@ -1,4 +1,4 @@
-﻿#include<iostream>
+#include<iostream>
 using namespace std;
 class AlergatorMaraton{
 public:
@@ -58,9 +58,10 @@ public:
 	}
 	void setRaceTime(float *timpCursaNou, int nrPuncteVerificareNou)
 	{
-		if(this->timpCursa!=NULL)
+		if(timpCursaNou!=NULL)
 		{
-			delete [] this->timpCursa;
+			if(this->timpCursa!=NULL)
+				delete [] this->timpCursa;
 			this->nrPuncteVerificare=nrPuncteVerificareNou;
 			this->timpCursa=new float[nrPuncteVerificareNou];
 			for(int i=0;i<nrPuncteVerificareNou;i++)
@@ -91,7 +92,7 @@ public:
 	{
 		return this->timpCursa[this->nrPuncteVerificare-1];
 	}
-	friend AlergatorMaraton operator+(float valoare, AlergatorMaraton a);
+	friend AlergatorMaraton operator+(double valoare, AlergatorMaraton a);
 	bool operator<(AlergatorMaraton a)
 	{
 		if(this->nrPuncteVerificare>a.nrPuncteVerificare)
