@@ -98,9 +98,10 @@ public:
 	//setterii
 	void setDenumire_ferma(char* denumire_fermaNou)
 	{
-		if(this->denumire_ferma!=NULL)
+		if(denumire_fermaNou!=NULL)
 		{
-			delete [] this->denumire_ferma;
+			if(this->denumire_ferma!=NULL)
+				delete [] this->denumire_ferma;
 			this->denumire_ferma=new char[strlen(denumire_fermaNou)+1];
 			strcpy(this->denumire_ferma,denumire_fermaNou);
 		}
@@ -109,9 +110,10 @@ public:
 	}
 	void setProduse(float *produseNou,int nr_luniNou)
 	{
-		if(this->produse!=NULL)
+		if(produseNou!=NULL)
 		{
-			delete [] this->produse;
+			if(this->produse!=NULL)
+				delete [] this->produse;
 			this->nr_luni=nr_luniNou;
 			this->produse=new float[nr_luniNou];
 			for(int i=0;i<nr_luniNou;i++)
