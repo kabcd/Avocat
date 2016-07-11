@@ -82,9 +82,10 @@ public:
 	}
 	void setNume(char* numeNou)
 	{
-		if(this->nume!=NULL)
+		if(numeNou!=NULL)
 		{
-			delete [] this->nume;
+			if(this->nume!=NULL)
+				delete [] this->nume;
 			this->nume=new char[strlen(numeNou)+1];
 			strcpy(this->nume,numeNou);
 		}
@@ -93,9 +94,10 @@ public:
 	}
 	void setVectorProcese(int *vectorProceseNou, int nrProceseNou)
 	{
-		if(this->valori_procese!=NULL)
+		if(vectorProceseNou!=NULL)
 		{
-			delete [] this->valori_procese;
+			if(this->valori_procese!=NULL)
+				delete [] this->valori_procese;
 			this->nr_procese=nrProceseNou;
 			this->valori_procese=new int[nrProceseNou];
 			for(int i=0;i<nrProceseNou;i++)
