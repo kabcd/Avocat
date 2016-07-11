@@ -82,9 +82,10 @@ public:
 	}
 	void setLocalitate(char* localitateNou)
 	{
-		if(this->localitate!=NULL)
+		if(localitateNou!=NULL)
 		{
-			delete [] this->localitate;
+			if(this->localitate!=NULL)
+				delete [] this->localitate;
 			this->localitate=new char[strlen(localitateNou)+1];
 			strcpy(this->localitate,localitateNou);
 		}
@@ -93,9 +94,10 @@ public:
 	}
 	void setVectorSupr(int *vectorSuprafeteNou, int nrCamereNou)
 	{
-		if(this->suprafara_camere!=NULL)
+		if(vectorSuprafeteNou!=NULL)
 		{
-			delete [] this->suprafara_camere;
+			if(this->suprafara_camere!=NULL)
+				delete [] this->suprafara_camere;
 			this->numar_camere=nrCamereNou;
 			this->suprafara_camere=new int[nrCamereNou];
 			for(int i=0;i<nrCamereNou;i++)
