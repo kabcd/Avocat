@@ -84,9 +84,10 @@ public:
 	}
 	void setNume(char* numeNou)
 	{
-		if(this->nume!=NULL)
+		if(numeNou!=NULL)
 		{
-			delete [] this->nume;
+			if(this->nume!=NULL)
+				delete [] this->nume;
 			this->nume=new char[strlen(numeNou)+1];
 			strcpy(this->nume,numeNou);
 		}
@@ -95,9 +96,10 @@ public:
 	}
 	void setCantitate(float *cantitateNou, int nr_zileNou)
 	{
-		if(this->cantitate!=NULL)
+		if(cantitateNou!=NULL)
 		{
-			delete [] this->cantitate;
+			if(this->cantitate!=NULL)
+				delete [] this->cantitate;
 			this->nr_zile=nr_zileNou;
 			this->cantitate=new float[nr_zileNou];
 			for(int i=0;i<nr_zileNou;i++)
@@ -108,7 +110,7 @@ public:
 	}
 	void setPret(float pretNou)
 	{
-		if(this->pret>0)
+		if(pretNou>0)
 			this->pret=pretNou;
 		else
 			throw new exception("Pret invalid!");
