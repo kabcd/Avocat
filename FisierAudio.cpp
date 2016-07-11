@@ -34,11 +34,12 @@ public:
 	{
 		return this->denumire;
 	}
-	void setName(char *denumireNou)
+	void setName(char* denumireNou)
 	{
-		if (this->denumire!= NULL)
+		if (denumireNou!= NULL)
 		{
-			delete [] this->denumire;
+			if(this->denumire!=NULL)
+				delete [] this->denumire;
 			this->denumire = new char[strlen(denumireNou) + 1];
 			strcpy(this->denumire, denumireNou);
 		}
