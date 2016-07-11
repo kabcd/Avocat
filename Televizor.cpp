@@ -80,22 +80,24 @@ public:
 	{
 		return Televizor::nr_televizoare;
 	}
-	void setFirma(char* FirmaNou)
+	void setFirma(char* firmaNou)
 	{
-		if(this->firma!=NULL)
+		if(firmaNou!=NULL)
 		{
-			delete [] this->firma;
-			this->firma=new char[strlen(FirmaNou)+1];
-			strcpy(this->firma,FirmaNou);
+			if(this->firma!=NULL)
+				delete [] this->firma;
+			this->firma=new char[strlen(firmaNou)+1];
+			strcpy(this->firma,firmaNou);
 		}
 		else
 			throw new exception("Firma invalida!");
 	}
 	void setCanale(float *canaleNou, int nr_canaleNou)
 	{
-		if(this->canale!=NULL)
+		if(canaleNou!=NULL)
 		{
-			delete [] this->canale;
+			if(this->canale!=NULL)
+				delete [] this->canale;
 			this->nr_canale=nr_canaleNou;
 			this->canale=new float[nr_canaleNou];
 			for(int i=0;i<nr_canaleNou;i++)
