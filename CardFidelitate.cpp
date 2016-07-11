@@ -70,9 +70,10 @@ public:
 	}
 	void setPosesor(char* posesorNou)
 	{
-		if(this->posesor!=NULL)
+		if(posesorNou!=NULL)
 		{
-			delete [] this->posesor;
+			if(this->posesor!=NULL)
+				delete [] this->posesor;
 			this->posesor=new char[strlen(posesorNou)+1];
 			strcpy(this->posesor,posesorNou);
 		}
