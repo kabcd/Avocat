@@ -68,15 +68,16 @@ public:
 		Document::nr_documente--;
 	}
 	//getterii si setterii
-	char *getNume_document()
+	char* getNume_document()
 	{
 		return this->nume_document;
 	}
-	void setNume_document(char *nume_documentNou)
+	void setNume_document(char* nume_documentNou)
 	{
-		if(this->nume_document!=NULL)
+		if(nume_documentNou!=NULL)
 		{
-			delete [] this->nume_document;
+			if(this->nume_document!=NULL)
+				delete [] this->nume_document;
 			this->nume_document=new char[strlen(nume_documentNou)+1];
 			strcpy(this->nume_document,nume_documentNou);
 		}
@@ -173,7 +174,7 @@ void main()
 		x[0]=150;
 		x[1]=300;
 		x[2]=150;
-		Document d2("Excel",15,3,x);
+		Document d2("Document02",15,3,x);
 		cout<<d2<<endl;
 
 		Document d3=d1;
@@ -201,9 +202,9 @@ void main()
 		y[0]=250;
 		y[1]=300;
 		y[2]=150;
-	    y[3]=0;
+	    	y[3]=0;
 		y[4]=200;
-		Document d8("PowerPoint",15,5,y);;
-		d8-=2; // se sterge a doua pagina din documentul d8
-		cout<<d8;
+		Document d6("Document06",15,5,y);;
+		d6-=2; // se sterge a doua pagina din documentul d6
+		cout<<d6<<endl;
 	}
