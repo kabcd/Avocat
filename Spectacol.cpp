@@ -343,11 +343,11 @@ void main()
 	cout<<s2.getValoare()<<endl;//returneaza incasarile pentru s2
 
 	Spectacol s4=s1;
-	//cin>>s4;
+	cin>>s4;
 	cout<<s4<<endl;
 	
 	Cinematograf c1;
-	//cin>>c1;
+	cin>>c1;
 
 	Cinematograf c2("Multiplex",2);//obiect initializat cu 2 spectacole cu valori implicite
 	Cinematograf c3("Multiplex",s2);//obiect initializat cu 1 spectacol
