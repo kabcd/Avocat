@@ -79,7 +79,7 @@ public:
 	{
 		return this->an_aparitie;
 	}
-	//metoda virtuala
+	//metoda virtuala pura
 	virtual double valoareDinVizionari()=0;
 };
 class Sculptura:public Art{
