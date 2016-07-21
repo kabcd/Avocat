@@ -180,7 +180,7 @@ ifstream &operator>>(ifstream &in, BiTermo &bt)
 }
 class UCC{
 private:
-	char *locatie;
+	char* locatie;
 	int nr_termostate;
 	Termo *termostate;
 public:
