@@ -10,6 +10,7 @@ protected:
 	int an_aparitie;
 	float pretBiletAcces;
 public:
+	//constructor default
 	Art()
 	{
 		this->autor=new char[strlen("Anonim")+1];
@@ -19,6 +20,7 @@ public:
 		this->an_aparitie=0;
 		this->pretBiletAcces=0;
 	}
+	//constructor cu 4 parametri
 	Art(char* autor, char* denumire, int an_aparitie, float pretBiletAcces)
 	{
 		this->autor=new char[strlen(autor)+1];
@@ -28,6 +30,7 @@ public:
 		this->an_aparitie=an_aparitie;
 		this->pretBiletAcces=pretBiletAcces;
 	}
+	//constructor de copiere
 	Art(Art &a)
 	{
 		this->autor=new char[strlen(a.autor)+1];
@@ -37,6 +40,7 @@ public:
 		this->an_aparitie=a.an_aparitie;
 		this->pretBiletAcces=a.pretBiletAcces;	
 	}
+	//destructorr
 	~Art()
 	{
 		if(this->autor!=NULL)
@@ -44,6 +48,7 @@ public:
 		if(this->denumire!=NULL)
 			delete [] this->denumire;	
 	}
+	//supraincarcare operator =
 	void operator=(Art &a)
 	{
 		if(this->autor!=NULL)
@@ -57,6 +62,7 @@ public:
 		this->an_aparitie=a.an_aparitie;
 		this->pretBiletAcces=a.pretBiletAcces;
 	}
+	//getterii
 	float getPretBiletAcces()
 	{
 		return this->pretBiletAcces;
@@ -73,6 +79,7 @@ public:
 	{
 		return this->an_aparitie;
 	}
+	//metoda virtuala
 	virtual double valoareDinVizionari()=0;
 };
 class Sculptura:public Art{
@@ -81,6 +88,7 @@ private:
 	int materialSuport;
 	int nrVizitatori;
 public:
+	//constructor default
 	Sculptura():Art()
 	{
 		this->CurentArtistic=new char[strlen("Anonim")+1];
@@ -88,6 +96,7 @@ public:
 		this->materialSuport=0;
 		this->nrVizitatori=0;
 	}
+	//constructor cu 7 parametri
 	Sculptura(char* CurentArtistic, int materialSuport, int nrVizitatori,char* autor, char* denumire,int an_aparitie, float pretBiletAcces)
 		:Art(autor,denumire,an_aparitie,pretBiletAcces)
 	{
@@ -96,11 +105,13 @@ public:
 		this->materialSuport=materialSuport;
 		this->nrVizitatori=nrVizitatori;
 	}
+	//destructor
 	~Sculptura()
 	{
 		if(this->CurentArtistic!=NULL)
 			delete [] this->CurentArtistic;
 	}
+	//constructor de copiere
 	Sculptura(Sculptura &s):Art(s)
 	{
 		this->CurentArtistic=new char[strlen(s.CurentArtistic)+1];
@@ -108,6 +119,7 @@ public:
 		this->materialSuport=s.materialSuport;
 		this->nrVizitatori=s.nrVizitatori;
 	}
+	//geterii si setterii
 	char* getCurentArtistic()
 	{
 		return this->CurentArtistic;
@@ -132,10 +144,12 @@ public:
 	{
 		return this->nrVizitatori;
 	}
+	//redefinire metoda virtuala
 	double valoareDinVizionari()
 	{
 		return this->nrVizitatori*this->getPretBiletAcces();
 	}
+	//supraincarcare operator =
 	void operator=(Sculptura s)
 	{
 		this->materialSuport=s.materialSuport;
@@ -146,16 +160,20 @@ public:
 		strcpy(this->CurentArtistic,s.CurentArtistic);
 		Art::operator=(s);	
 	}
+	//supraincarcare operator <<
 	friend ostream &operator<<(ostream &out, Sculptura &s);
-	friend istream &operator>>(istream &in, Sculptura &s);
 	friend ofstream &operator<<(ofstream &out, Sculptura &s);
+	//supraincarcare operator >>
+	friend istream &operator>>(istream &in, Sculptura &s);
 	friend ifstream &operator>>(ifstream &in, Sculptura &s);
+	//supraincarcare operator ++ forma postfixata
 	Sculptura operator++(int)
 	{
 		Sculptura aux=*this;
 		this->pretBiletAcces+=5;
 		return aux;
 	}
+	//supraincarcare operator <
 	char* operator<(Sculptura s)
 	{
 		if(this->nrVizitatori<s.nrVizitatori)
@@ -246,11 +264,13 @@ private:
 	int nr_sculpturi;
 	Sculptura *sculpturi;
 public:
+	//constructor default
 	Muzeu()
 	{
 		this->nr_sculpturi=0;
 		this->sculpturi=NULL;
 	}
+	//constructor cu 2 parametri
 	Muzeu(Sculptura *sculpturi,int nr_sculpturi)
 	{
 		this->nr_sculpturi=nr_sculpturi;
@@ -258,6 +278,7 @@ public:
 		for(int i=0;i<this->nr_sculpturi;i++)
 			this->sculpturi[i]=sculpturi[i];
 	}
+	//constructor de copiere
 	Muzeu(Muzeu &m)
 	{
 		this->nr_sculpturi=m.nr_sculpturi;
@@ -265,11 +286,13 @@ public:
 		for(int i=0;i<this->nr_sculpturi;i++)
 			this->sculpturi[i]=m.sculpturi[i];
 	}
+	//destructor
 	~Muzeu()
 	{
 		if(this->sculpturi!=NULL)
 			delete [] this->sculpturi;
 	}
+	//supraincarcare operator =
 	void operator=(Muzeu m)
 	{
 		this->nr_sculpturi=m.nr_sculpturi;
@@ -279,6 +302,7 @@ public:
 		for(int i=0;i<this->nr_sculpturi;i++)
 			this->sculpturi[i]=m.sculpturi[i];
 	}
+	//getterii
 	int getNr_sculpturi()
 	{
 		return this->nr_sculpturi;
@@ -287,9 +311,12 @@ public:
 	{
 		return this->sculpturi;
 	}
+	//supraincarcare operator <<
 	friend ostream &operator<<(ostream &out, Muzeu &m);
 	friend ofstream &operator<<(ofstream &out, Muzeu &m);
+	//supraincarcare operator >>
 	friend ifstream &operator>>(ifstream &in, Muzeu &m);
+	//supraincarcare operator +=
 	Muzeu operator+=(Sculptura s)
 	{
 		Sculptura *aux=new Sculptura[this->nr_sculpturi+1];
