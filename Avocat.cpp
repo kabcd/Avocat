@@ -234,6 +234,8 @@ ostream &operator<<(ostream &out, AvocatOficiu &a)
 void main()
 {
 	Avocat a1;
+	cout<<a1.getCod()<<endl;
+
 	int *vectProc1;
 	vectProc1=new int[3];
 	vectProc1[0]=2000;
@@ -243,7 +245,7 @@ void main()
 	
 	cout<<a2.getNume()<<endl;
 	a2.setNume("Paraschivescu Gigel");
-	cout<<a1.getCod()<<endl;
+	
 	for(int i=0;i<a2.getNumarProcese();i++)
 		cout<<a2.getVectorProcese()[i]<<" ";
 	cout<<endl;
@@ -292,7 +294,7 @@ void main()
 	AvocatOficiu ao1(123,"Georgescu Vasile",120,3,vectProc3,"Popescu Ion",4);
 	cout<<ao1<<endl;
 
-	// se adauga toti avocatii  intr-o structura STL de tip lista, se sorteaza si apoi se afiseaza folosind un iterator
+	//se adauga toti avocatii  intr-o structura STL de tip lista, se sorteaza si apoi se afiseaza folosind un iterator
 	list<Avocat> barou;
 	barou.push_back(a1);
 	barou.push_back(a2);
