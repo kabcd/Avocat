@@ -250,22 +250,21 @@ void sorteaza(T vector[], int dimensiune)
 }
 void main()
 {
-	CosDeCumparaturi cc1;
-	cin>>cc1;
-
 	Articol a1;
-	CosDeCumparaturi cc2(a1);
-
 	Articol a2(101,"TV",2999.99,1);
 	Articol a3(102,"Telecomanda",149.99,1);
 	Articol a4(103,"Kit Wireless",119.99,1);
+	
+	CosDeCumparaturi cc1;
+	cin>>cc1;
+	CosDeCumparaturi cc2(a1);
 	Articol articole[]={a2,a3,a4};
 	CosDeCumparaturi cc3(articole,3);
 
 	cout<<cc1<<endl<<cc2<<endl<<cc3<<endl;
 	
 	CosDeCumparaturi cc4;
-	cc4+=a1;//se adauga un articol in cos; daca exista articolul se incrementeaza cantitate
+	cc4+=a1;//se adauga un articol in cos; daca exista articolul se incrementeaza cantitatea
 	cc4+=a2;
 	cc4+=a3;
 	cc4+=a4;
@@ -289,7 +288,7 @@ void main()
 	fIn.close();
 
 	CosDeCumparaturi listaCC[]={cc1, cc2, cc3, cc4};
-	sorteaza(listaCC,4);// functie generica pentru sortarea crescatoare a elementelor masivului unidimensional
+	sorteaza(listaCC,4);//functie generica pentru sortarea crescatoare a elementelor masivului unidimensional
 	
 	//se adauga toate cosurile de cumparaturi intr-o structura STL de tip lista si se calculeaza valoarea totala a tranzactiilor folosind un iterator 
 	list<CosDeCumparaturi> comenziCurente;
