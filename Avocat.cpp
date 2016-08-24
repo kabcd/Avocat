@@ -234,7 +234,6 @@ ostream &operator<<(ostream &out, AvocatOficiu &a)
 void main()
 {
 	Avocat a1;
-	cout<<a1.getCod()<<endl;
 
 	int *vectProc1;
 	vectProc1=new int[3];
@@ -243,6 +242,7 @@ void main()
 	vectProc1[2]=8000;
 	Avocat a2(123,"Georgescu Vasile",120,3,vectProc1);
 	
+	cout<<a2.getCod()<<endl;
 	cout<<a2.getNume()<<endl;
 	a2.setNume("Paraschivescu Gigel");
 	
