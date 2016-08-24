@@ -130,7 +130,7 @@ AlergatorMaraton operator+(double valoare, AlergatorMaraton a)
 void main()
 {
 	AlergatorMaraton m1;
-	cout<<m1.getTotalRaceTime()<<endl; // intoarce 0 daca nu exista timpi intermediari, altfel intoarce ultima valoare
+	cout<<m1.getTotalRaceTime()<<endl; //intoarce 0 daca nu exista timpi intermediari, altfel intoarce ultima valoare
 	cout<<m1.id<<endl; 
 
 	float timp1[] = { 12.5, 34.6, 78.3 };
@@ -156,7 +156,7 @@ void main()
 	AlergatorMaraton m5 = ++(*pm2); //adauga un timp intermediar cu valoarea 100
 	cout<<pm2->getNrPuncteIntermediare()<<" "<<m5.getNrPuncteIntermediare()<<endl; 
 	
-	delete pm2;// dezaloca spatiul ocupat de pm2
+	delete pm2; //dezaloca spatiul ocupat de pm2
 	
 	float timp = (float)m5;
 	cout<<timp<<endl; 
