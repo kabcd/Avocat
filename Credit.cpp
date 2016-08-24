@@ -136,7 +136,7 @@ void main()
 	cout<<ci1.valoareBun()<<endl;
 	cout<<pc1->valoareBun()<<endl;
 
-	// se adauga toate creditele intr-o structura STL de tip vector si se afiseaza vectorul sortat crescator dupa valoarea creditului folosind un iterator 
+	//se adauga toate creditele intr-o structura STL de tip vector si se afiseaza vectorul sortat crescator dupa valoarea creditului folosind un iterator 
 	vector<Credit> credite;
 	credite.push_back(c1);
 	credite.push_back(c2);
