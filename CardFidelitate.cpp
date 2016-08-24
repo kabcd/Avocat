@@ -1,11 +1,11 @@
-﻿#include <iostream>
+#include <iostream>
 using namespace std;
 class CardFidelitate{
 private:
 	int puncte_disponibile;
 	char* posesor;
 	int nr_luni;
-	float *puncte_pe_luna;//puncte primite pt vechime in fiecare luna
+	float *puncte_pe_luna; //puncte primite pt vechime in fiecare luna
 	const int cod_card;
 public:
 	//constructor fara parametri
@@ -174,7 +174,7 @@ void main()
 	CardFidelitate cf2(25,"Georgescu Ion",4,x,12);
 	cout<<cf2<<endl;
 
-	cout<<"Total puncte vechime:"<<cf2.TotalPuncteVechime(x,4)<<endl; //calculeaza numarul total de puncte primite de posesor pentru vechimea cardului
+	cout<<"Total puncte vechime:"<<cf2.TotalPuncteVechime(x,4)<<endl; //se calculeaza numarul total de puncte primite de posesor pentru vechimea cardului
 
 	CardFidelitate cf3=cf2;
 	cout<<cf3<<endl;
@@ -187,13 +187,13 @@ void main()
 	cin>>cf5;
 	cout<<cf5<<endl;
 	
-	cf3-=20;// se diminueaza numarul de puncte disponibile pe card cu 20
+	cf3-=20; //se diminueaza numarul de puncte disponibile pe card cu 20
 	cout<<cf3<<endl;
 
-	cf3+=20.5; // se adauga o nou luna cu un nr de puncte pentru vechime
+	cf3+=20.5; //se adauga o nou luna cu un nr de puncte pentru vechime
 	cout<<cf3<<endl;
 
 	CardFidelitate cf6(25,"Anghel Andrei",4,x,32);
-	int t=cf6;// cast-ul returneaza numarul de puncte disponibile pe card
+	int t=cf6; //cast-ul returneaza numarul de puncte disponibile pe card
 	cout<<t<<endl;
 }
