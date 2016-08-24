@@ -1,4 +1,4 @@
-﻿#include<iostream>
+#include<iostream>
 using namespace std;
 #include<fstream>
 #include<vector>
@@ -364,7 +364,7 @@ void main()
 	
 	try{
 		cout<<"Primul spectacol este: "<<c4[0];
-		cout<<"Al cincilea spectacol este:"<<c4[10];
+		cout<<"Al cincilea spectacol este:"<<c4[5];
 	}
 	catch(int ex)
 	{
@@ -384,7 +384,7 @@ void main()
 	c4+=sd;
 	cout<<(double)c4<<endl;
 	
-	// se adauga toate spectacole intr-o structura STL de tip vector si utilizand iteratori se parcurge multimea de spectacole si se afiseaza informatiile despre fiecare spectacol
+	//se adauga toate spectacole intr-o structura STL de tip vector si utilizand iteratori se parcurge multimea de spectacole si se afiseaza informatiile despre fiecare spectacol
 	vector<Spectacol> spectacole;
 	spectacole.push_back(s1);
 	spectacole.push_back(s2);
