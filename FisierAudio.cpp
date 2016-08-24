@@ -105,6 +105,7 @@ ostream &operator<<(ostream &out, FisierAudio &f)
 void main()
 {
 	FisierAudio fa1;
+	cout<<fa1.getName()<<endl;
 
 	FisierAudio fa2(197, "Gangnam Style");
 	cout << fa2.getDurata()<<endl;
@@ -129,7 +130,7 @@ void main()
 	delete pfa2;
 	
 	int durata = (int)fa5;
-	cout << durata<<endl;
+	cout<<durata<<endl;
 	
 	cout << fa2-fa5 << " "<<fa5-fa2<<endl;
 	if (fa5 > fa2)
