@@ -163,7 +163,6 @@ public:
 	}
 	void scrieInFisier(ofstream &fisier)
 	{
-		// lista de produse sortate in functie de valoare
 		if (fisier.is_open())
 		{
 			for(int i=0;i<this->n-1;i++)
