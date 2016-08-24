@@ -1,4 +1,4 @@
-﻿#include<iostream>
+#include<iostream>
 using namespace std;
 #include<fstream>
 #include<list>
@@ -111,12 +111,14 @@ public:
 		for (int i = 0; i <this->n; i++)
 			this->medicamente[i] =medicamente[i];
 	}
+	
 	//destructor
-	/*~Reteta()
-	{
-		if(this->medicamente!=NULL)
-			delete [] this->medicamente;
-	}*/
+	//~Reteta()
+	//{
+	//	if(this->medicamente!=NULL)
+	//		delete [] this->medicamente;
+	//}
+
 	//metoda virtuala
 	virtual float getValoare()
 	{
@@ -200,7 +202,7 @@ public:
 		this->procentCompensat=procentCompensat;
 	}
 	//constructor cu 2 parametri
-	RetetaCompensata(Reteta r, float procentCompensat):Reteta()
+	RetetaCompensata(Reteta r, float procentCompensat):Reteta(r.getMedicamente(), r.getN())
 	{
 		this->procentCompensat=procentCompensat;
 	}
@@ -261,7 +263,6 @@ void main()
 	fisier>>r4;
 	cout<<r4<<endl;
 
-	cout<<"----------------"<<endl;
 	//se sa utilizeze o structura STL de tip list pentru a construi o lista de pointeri la obiecte Reteta, apoi sa se parcurga lista si sa se afiseze lista si valoarea fiecarei retete
 	Reteta* p0=&r0; Reteta* p1=&r1; Reteta* p2=&r2; Reteta* p3=&r3; Reteta* p4=&r4;
 	list<Reteta*> retete;
