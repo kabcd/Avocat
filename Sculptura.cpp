@@ -40,7 +40,7 @@ public:
 		this->an_aparitie=a.an_aparitie;
 		this->pretBiletAcces=a.pretBiletAcces;	
 	}
-	//destructorr
+	//destructor
 	~Art()
 	{
 		if(this->autor!=NULL)
@@ -201,8 +201,9 @@ istream &operator>>(istream &in, Sculptura &s)
 		delete [] s.autor;
 	s.autor=new char[strlen(aux)+1];
 	strcpy(s.autor,aux);
+	in.ignore(256,'\n');
 	cout<<"Dati denumire:";
-	in>>aux;
+	in.getline(aux,50);
 	if(s.denumire!=NULL)
 		delete [] s.denumire;
 	s.denumire=new char[strlen(aux)+1];
