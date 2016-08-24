@@ -192,7 +192,7 @@ void main()
 
 		cout<<"Nr documente: "<<Document::getNr_documente()<<endl;
 
-		d2+=2.3;// se mareste dimensiunea documentului d2 cu 2.3
+		d2+=2.3; //se mareste dimensiunea documentului d2 cu 2.3
 		cout<<d2<<endl;
 
 		float d=d2;
@@ -205,6 +205,6 @@ void main()
 	    	y[3]=0;
 		y[4]=200;
 		Document d6("Document06",15,5,y);;
-		d6-=2; // se sterge a doua pagina din documentul d6
+		d6-=2; //se sterge a doua pagina din documentul d6
 		cout<<d6<<endl;
 	}
