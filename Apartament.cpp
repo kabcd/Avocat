@@ -268,7 +268,7 @@ void main()
 	cout<<a4<<endl;
 	fisIn.close();
 
-	cout<<(double)a2<<endl;// se calculeaza suprafata medie a unei camere din apartamentul a2
+	cout<<(double)a2<<endl;//se calculeaza suprafata medie a unei camere din apartamentul a2
 	
 	int *vectSupr3;
 	vectSupr3=new int[2];
