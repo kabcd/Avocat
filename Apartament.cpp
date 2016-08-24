@@ -264,7 +264,7 @@ void main()
 	fisOut<<a4;//se salveaza in fisier datele despre apartamentul a4
 	fisOut.close();
 	ifstream fisIn("intrare.txt",ios::in);
-	fisIn>>a4;//se citesc din fisier datale despre apartamentul a4
+	fisIn>>a4;//se citesc din fisier datele despre apartamentul a4
 	cout<<a4<<endl;
 	fisIn.close();
 
