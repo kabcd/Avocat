@@ -11,14 +11,12 @@ public:
 	//construcor default
 	Sir()
 	{
-		cout<<" Constructor default Sir: "<<endl;
 		this->pe=NULL;
 		this->lg=0;
 	}
 	//constructor cu parametri
 	Sir(char* pe,int lg)
 	{
-		cout<<" Constructor cu 2 parametri Sir: "<<endl;
 		this->lg=lg;
 		this->pe=new char[this->lg+1];
 		strcpy(this->pe,pe);
@@ -26,7 +24,6 @@ public:
 	//constructor de copiere
 	Sir(Sir &s)
 	{
-		cout<<" Constructor de copiere Sir: "<<endl;
 		this->lg=s.lg;
 		this->pe=new char[s.lg+1];
 		strcpy(this->pe,s.pe);
@@ -34,14 +31,12 @@ public:
 	//destructor
 	~Sir()
 	{
-		cout<<" Destructor Sir: "<<endl;
 		if(this->pe!=NULL)
 			delete [] this->pe;
 	}
 	//supraincarcare operator =
 	Sir &operator=(Sir &s)
 	{
-		cout<<" Operator = Sir: "<<endl;
 		if(this->pe!=NULL)
 			delete [] this->pe;
 		this->lg = s.lg;
@@ -61,7 +56,6 @@ public:
 	//supraincarcare operator ! pentru a testa daca sirul este vid
 	bool operator!()
 	{
-		cout<<" Operator ! Sir: "<<endl;
 		if (this->pe!= NULL)
 			return true;
 		else
@@ -76,7 +70,6 @@ public:
 	//supraincarcare operator += pentru concatenarea unui obiect Sir la un obiect Sir existent
 	Sir &operator+=(Sir &s)
 	{
-		cout<<" Operator += Sir: "<<endl;
 		char* aux=new char[this->lg+s.lg+1];
 		strcpy(aux, this->pe);
 		strcat(aux, s.pe);
@@ -90,7 +83,6 @@ public:
 	//supraincarcare operator [] pentru referirea unui caracter din sir
 	char &operator[](int index)
 	{
-		cout<<" Operator [] Sir: "<<endl;
 		static char err;
 		if (index>=0 && index<this->lg)
 			return this->pe[index];
@@ -100,7 +92,6 @@ public:
 	//supraincarcare opearator ==
 	bool operator==(Sir &s)
 	{
-		cout<<" Operator == Sir: "<<endl;
 		if(strcmp(this->pe,s.pe)==0)
 			return true;
 		else
@@ -109,7 +100,6 @@ public:
 	//supraincarcare operator !=
 	bool operator!=(Sir &s)
 	{
-		cout<<" Operator != Sir: "<<endl;
 		if(strcmp(this->pe,s.pe)!=0)
 			return 1;
 		else
@@ -118,7 +108,6 @@ public:
 	//supraincarcare operator <
 	bool operator<(Sir &s)
 	{
-		cout<<" Operator < Sir: "<<endl;
 		if(strcmp(this->pe,s.pe)<0)
 			return true;
 		else
@@ -127,13 +116,11 @@ public:
 	//supraincarcare cast la char
 	operator char()
 	{
-		cout<<" Operator cast Sir: "<<endl;
 		return this->pe[0];
 	}
 };
 istream &operator >>(istream &in, Sir &s)
 {
-	cout<<" Operator >> Sir: "<<endl;
 	cout << "Dati lungimea:";
 	in >> s.lg;
 	cout << "Dati sir:";
@@ -147,13 +134,11 @@ istream &operator >>(istream &in, Sir &s)
 }
 ostream &operator<<(ostream &out, Sir &s)
 {
-	cout<<" Operator << Sir: "<<endl;
 	out<<s.pe<<endl;
 	return out;
 }
 Sir &operator+(Sir &s1, char* s2)
 {
-	cout<<" Operator + Sir: "<<endl;
 	Sir *s=new Sir();
 	s->lg=s1.lg+strlen(s2);
 	s->pe=new char[s->lg+1];
@@ -175,24 +160,21 @@ Sir &operator+(Sir &s1, char* s2)
 class SirNumeric :public Sir{
 public:
 	//constructor default
-	SirNumeric():Sir()
-	{
-		cout<<" Constructor default SirNumeric: "<<endl;
-	}
+	SirNumeric():Sir(){}
 	//constructor cu 2 parametri
-	SirNumeric(char* pe, int lg):Sir(pe, lg)
-	{
-		cout<<" Constructor cu 2 parametri SirNumeric: "<<endl;
-	}
+	SirNumeric(char* pe, int lg):Sir(pe, lg){}
 	//destructor
-	~SirNumeric()
-	{
-		cout<<" Destructor SirNumeric: "<<endl;
-	}
+	~SirNumeric(){}
 	//metoda membra
 	bool test()
 	{
-		if(strstr(this->pe,"0123456789")==0)
+		int nr=0;
+		for(int i=strlen(this->pe)-1;i>=0;i--)
+		{
+			if (isdigit (pe[i])) 
+				nr++;
+		}
+		if(nr==strlen(this->pe))
 			return true;
 		else
 			return false;
@@ -200,7 +182,6 @@ public:
 	//supraincarcare operator+
 	long operator+(SirNumeric &s)
 	{
-		cout<<" Operator+ SirNumeric: "<<endl;
 		return atol(this->pe)+atol(s.pe);
 	}
 };
@@ -238,7 +219,7 @@ void main()
 	
 	SirNumeric sn1("157890",15);
 	SirNumeric sn2("123450", 16);
-	if(sn1.test()!=0)
+	if(sn1.test())
 		cout<<"Sirul contine doar cifre 0-9"<<endl;
 	else
 		cout<<"Sirul nu contine doar cifre 0-9"<<endl;
