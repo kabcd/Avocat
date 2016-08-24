@@ -39,7 +39,7 @@ public:
 	Termo operator=(Termo t)
 	{
 		if(this->eticheta!=NULL)
-		delete [] this->eticheta;
+			delete [] this->eticheta;
 		this->eticheta=new char[strlen(t.eticheta)+1];
 		strcpy(this->eticheta,t.eticheta);
 		this->temperatura_citita=t.temperatura_citita;
@@ -143,7 +143,7 @@ public:
 	~BiTermo(){}
 	float tempMedieCitita()
 	{
-		return (this->getTemperatura_citita()+this->temperatura_pardoseala_citita)/2;
+		return (this->getTemperatura_citita()+this->getTemperatura_dorita())/2;
 	}
 	float getTemperatura_pardoseala_citita()
 	{
@@ -298,9 +298,10 @@ ostream &operator<<(ostream &out, UCC &u)
 }
 istream &operator>>(istream &in, UCC &u)
 {
+	in.ignore(256,'\n');
 	cout<<"Dati locatie:";
 	char aux[50];
-	in>>aux;
+	in.getline(aux, 50);
 	if(u.locatie!=NULL)
 		delete [] u.locatie;
 	u.locatie=new char[strlen(aux)+1];
@@ -324,7 +325,7 @@ void main()
 	cout<<t1<<endl<<t2<<endl<<t3<<endl;
 	
 	Termo t4;
-	//cin>>t4;
+	cin>>t4;
 	cout<<t4<<endl;
 
 	Termo tm1[]={t1,t2,t3,t4};
@@ -334,10 +335,10 @@ void main()
 
 	UCC u3(u2);
 	UCC u4; u4=u1;
-	//cin>>u4;
+	cin>>u4;
 	cout<<u1<<endl<<u2<<endl<<u3<<endl<<u4<<endl;
 	
-	--t1;// se diminueaza cu 1 grad temperatura dorita
+	--t1;//se diminueaza cu 1 grad temperatura dorita
 	cout<<t1<<endl;
 
 	u2+=2;//se adauga 2 termostate la unitatea de comanda-control u2
@@ -357,9 +358,10 @@ void main()
 	
 	BiTermo t5=t3;
 	pt=&t5;
+	cout<<t3<<endl;
 	cout<<pt->tempMedieCitita()<<endl;
 
-	map<string, BiTermo> btMap;// cheia este eticheta termostatului bivalent
+	map<string, BiTermo> btMap;//cheia este eticheta termostatului bivalent
 	typedef pair<string, BiTermo> element;
 	ifstream fisIn("biTermo.txt", ios::in);
 	BiTermo bt;
