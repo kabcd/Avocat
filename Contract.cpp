@@ -1,4 +1,4 @@
-﻿#include<iostream>
+#include<iostream>
 #include<fstream>
 #include<list>
 using namespace std;
@@ -125,7 +125,7 @@ public:
 	{
 		this->perioada=0;
 	}
-	ContractInchiriere(const int nrContract, int an, char *beneficiar, char* furnizor, float valoare, int perioada)
+	ContractInchiriere(const int nrContract, int an, char* beneficiar, char* furnizor, float valoare, int perioada)
 		:Contract(nrContract, an, beneficiar, furnizor,valoare)
 	{
 		this->perioada=perioada;
@@ -151,7 +151,6 @@ public:
 		if(this->vector!=NULL)
 			delete [] this->vector;
 	}
-	// seteaza valoarea unui element din vector
 	void setVector(int i, T valoare)
 	{
 		 vector[i] = valoare;
@@ -171,7 +170,7 @@ void main()
 	c1=c2;
 	cout<<"Contractul "<<c2.get_nrContract()<<" are valoarea de "<<c2.get_valoare()<<endl;
 	
-	c1=c2++;// se incrementeaza valoarea contractului c2 cu 100
+	c1=c2++;//se incrementeaza valoarea contractului c2 cu 100
 	cout<<c1<<endl;
 	cout<<c2<<endl;
 
@@ -193,7 +192,7 @@ void main()
 	contracteInchiriere.setVector(2, ci3);
 	cout<<"Valoarea tuturor contractelor: "<<contracteInchiriere.get_valoareDosar()<<endl;
 
-	// se adauga toate contractele intr-o structura STL de tip lista si se afiseaza lista sortata crescator dupa anul semnarii contractului folosind un iterator 
+	//se adauga toate contractele intr-o structura STL de tip lista si se afiseaza lista sortata crescator dupa anul semnarii contractului folosind un iterator 
 	list<Contract> contracte;
 	contracte.push_back(c1);
 	contracte.push_back(c2);
