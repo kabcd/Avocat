@@ -222,8 +222,8 @@ void main()
 	cout<<nr<<endl;
 
 	Televizor t5;
-	//cin>>t5;
-	//cout<<t5<<endl;
+	cin>>t5;
+	cout<<t5<<endl;
 
 	cout<<t2[0]<<endl;
 
