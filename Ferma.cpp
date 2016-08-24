@@ -171,6 +171,7 @@ ostream &operator<<(ostream &out, Ferma &f)
 	cout<<"Produse: ";
 	for(int i=0;i<f.nr_luni;i++)
 		out<<f.produse[i]<<" ";
+	out<<endl;
 	return out;
 }
 istream &operator>>(istream &in, Ferma &f)
@@ -245,7 +246,7 @@ void main()
 	cout<<"Nr ferme:"<<Ferma::getNr_ferme()<<endl;
 
 	if(f6<=f7)
-		cout<<"Ferma f7 are o suprafata mai mare decat ferma f6";
+		cout<<"Ferma f7 are o suprafata mai mare decat ferma f6"<<endl;
 	else
-		cout<<"Ferma f6 are o suprafata mai mare decat ferma f7";
+		cout<<"Ferma f6 are o suprafata mai mare decat ferma f7"<<endl;
 }
